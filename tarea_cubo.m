@@ -1,45 +1,25 @@
 clf;
 clc;
+Base1 = [0 0 0];  
+Base2 = [1 0 0]; 
+Base3 = [1 1 0]; 
+Base4 = [0 1 0]; 
+Base5 = [0 0 1]; 
+Base6 = [1 0 1]; 
+Base7 = [1 1 1]; 
+Base8 = [0 1 1]; 
+x = [Base1(1) Base2(1) Base3(1) Base4(1) Base1(1) Base5(1) Base6(1) Base7(1) Base8(1) Base5(1) Base8(1) Base4(1) Base8(1) Base7(1) Base3(1) Base2(1) Base6(1)];
+y = [Base1(2) Base2(2) Base3(2) Base4(2) Base1(2) Base5(2) Base6(2) Base7(2) Base8(2) Base5(2) Base8(2) Base4(2) Base8(2) Base7(2) Base3(2) Base2(2) Base6(2)];
+z = [Base1(3) Base2(3) Base3(3) Base4(3) Base1(3) Base5(3) Base6(3) Base7(3) Base8(3) Base5(3) Base8(3) Base4(3) Base8(3) Base7(3) Base3(3) Base2(3) Base6(3)];
+ line([0 10], [0 0], 'LineWidth', 1, 'Color', 'red');    
+ line([0 0], [0 10], 'LineWidth', 1, 'Color', 'magenta');
+ line([0 0], [0 0], [0 10], 'LineWidth', 1, 'Color', 'yellow');
 
-Base1 = [2 0 0 1]'; 
-Base2 = [5 0 0 1]'; 
-Base3 = [5 3 0 1]'; 
-Base4 = [2 3 0 1]'; 
-
-saltos_y = linspace(0, 4, 20);
-for i = 1:length(saltos_y)
-    
-    clf;
-    
-    line([0 10], [0 0], 'LineWidth', 1, 'Color', 'red');    
-    line([0 0], [0 10], 'LineWidth', 1, 'Color', 'magenta'); 
-    axis([-1 10 -1 10]);
-    grid on;
-    hold on;
-    
-    Punto1 = Base1;
-    Punto2 = Base2;
-    Punto3 = Base3;
-    Punto4 = Base4;
-    
-    altura_actual = saltos_y(i);
-    Punto1(2) = Punto1(2) + altura_actual;
-    Punto2(2) = Punto2(2) + altura_actual;
-    Punto3(2) = Punto3(2) + altura_actual;
-    Punto4(2) = Punto4(2) + altura_actual;
-    
-    line([Punto1(1), Punto2(1)], [Punto1(2), Punto2(2)], 'LineWidth', 2, 'Color', 'blue'); 
-    line([Punto2(1), Punto3(1)], [Punto2(2), Punto3(2)], 'LineWidth', 2, 'Color', 'blue'); 
-    line([Punto3(1), Punto4(1)], [Punto3(2), Punto4(2)], 'LineWidth', 2, 'Color', 'blue'); 
-    line([Punto4(1), Punto1(1)], [Punto4(2), Punto1(2)], 'LineWidth', 2, 'Color', 'blue'); 
-    
-   
-    scatter(Punto1(1), Punto1(2), 50, 'red', 'filled');
-    scatter(Punto2(1), Punto2(2), 50, 'yellow', 'filled');
-    scatter(Punto3(1), Punto3(2), 50, 'magenta', 'filled');
-    scatter(Punto4(1), Punto4(2), 50, 'green', 'filled');
-    
-   
-    pause(0.1);
-    
-end
+Cubo = line(x,y,z);
+Cubo.Color = 'blue';
+Cubo.LineStyle = '--'; 
+Cubo.LineWidth = 2;
+axis([-1,2,-1,2,-1,2]); 
+axis square; 
+grid on 
+view(3);
