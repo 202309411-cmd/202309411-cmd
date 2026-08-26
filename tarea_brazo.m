@@ -1,18 +1,25 @@
 clf;
 clc;
-
 l1 = input("Introduce la longitud del eslabon 1 [m]: ");
 teta1 = input("Introduce el angulo de la primer articulacion [rad]: ");
 l2 = input("Introduce la longitud del eslabon 2 [m]: ");
 teta2 = input("Introduce el angulo de la segunda articulacion [rad]: ");
 
-ruta_teta1 = linspace(0, teta1, 30);
-ruta_teta2 = linspace(0, teta2, 30);
-joint_1 = [0 0]';
+ruta1_teta1 = linspace(0, teta1, 30);
+ruta1_teta2 = zeros(1, 30); 
 
+ruta2_teta1 = teta1 * ones(1, 30);
+ruta2_teta2 = linspace(0, teta2, 30);
+
+ruta_teta1 = [ruta1_teta1, ruta2_teta1];
+ruta_teta2 = [ruta1_teta2, ruta2_teta2];
+
+joint_1 = [0 0]';
 limite = l1 + l2 + 0.5;
 
-for i = 1:30
+pasos_totales = length(ruta_teta1); 
+
+for i = 1:pasos_totales
     clf;
     hold on;
     grid on;
@@ -21,7 +28,7 @@ for i = 1:30
     
     line([0 2], [0 0], [0 0], 'Color', 'red', 'LineWidth', 3);
     line([0 0], [0 2], [0 0], 'Color', 'green', 'LineWidth', 3);
-
+    
     angulo_actual = ruta_teta1(i);
     angulo_actual2 = ruta_teta2(i);
     
