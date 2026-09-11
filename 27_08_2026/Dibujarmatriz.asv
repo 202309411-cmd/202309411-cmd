@@ -1,0 +1,9 @@
+function PointMatrix = GetPointMatrix(Largo,Ancho,Alto, Xinit,Yinit,Zinit)
+%DIBUJARMATRIZ Summary of this function goes here
+%   Detailed explanation goes here
+
+%Punto base
+P1 = [Xinit;Yinit,Zinit;1];
+P2 = [Xinit+Ancho;Yinit,Zinit;1];
+P3 = [Xinit+;Yinit,Zinit;1];
+end

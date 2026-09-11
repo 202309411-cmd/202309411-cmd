@@ -1,0 +1,12 @@
+clear all
+close all
+
+Dibujaejes (10);
+
+[Ancho,Largo,Alto] = Leerdimensiones();
+fprintf("Ancho: %f | Largo: %f | Alto: %f" ,Ancho,Largo,Alto);
+
+PointMatrix = Dibujarmatriz(Largo,Ancho,Alto,0,0,0);
+4
+
+Dibujacaja(PointMatrix);

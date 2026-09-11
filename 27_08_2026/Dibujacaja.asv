@@ -1,0 +1,21 @@
+function  Dibujacaja(PointMatrix)
+%DIBUJACAJA Summary of this function goes here
+%   Detailed explanation goes here
+
+P1 = PointMatrix(:,1);
+P2 = PointMatrix(:,2);
+P3 = PointMatrix(:,3);
+P4 = PointMatrix(:,4);
+P5 = PointMatrix(:,5);
+P6 = PointMatrix(:,6);
+P7 = PointMatrix(:,7);
+P8 = PointMatrix(:,8);
+
+% Dibujando Base
+Dibujalinea(P1,P2, 'black');
+Dibujalinea(P1, P3, 'black');
+Dibujalinea(P2, P4, 'black');
+Dibujalinea(P5, P7, 'black');
+Dibujalinea(P6, P8, 'black');
+
+end

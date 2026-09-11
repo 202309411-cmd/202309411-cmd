@@ -6,7 +6,7 @@ l2 = input("Introduce la longitud del eslabon 2 [m]: ");
 teta2 = input("Introduce el angulo de la segunda articulacion [rad]: ");
 
 ruta1_teta1 = linspace(0, teta1, 20);
-ruta1_teta2 = zeros(1, 30); 
+ruta1_teta2 = zeros(1, 20); 
 
 ruta2_teta1 = teta1 * ones(1, 20);
 ruta2_teta2 = linspace(0, teta2, 20);
