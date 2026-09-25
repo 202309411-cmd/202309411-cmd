@@ -23,13 +23,13 @@ for i = 1:pasos_totales
     grid on;
     
     axis([0 3 0 3]); 
-
     line([0 10], [0 0], 'Color', 'red', 'LineWidth', 3);
     line([0 0], [0 10], 'Color', 'green', 'LineWidth', 3);
 
     angulo_actual = ruta_teta1(i);
     angulo_actual2 = ruta_teta2(i);
     
+    %GEOMETRIA
     l1x = l1 * cos(angulo_actual);
     l1y = l1 * sin(angulo_actual);
     joint_2 = [l1x, l1y]'; 
